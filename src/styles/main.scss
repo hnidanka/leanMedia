@@ -1,0 +1,65 @@
+@import '_variables';
+
+
+.main-grid-container {
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 80px); 
+    grid-gap: 16px; 
+    justify-content: center; 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $font-family-base;
+    color: $primary-color-100; 
+    .call-to-action {
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      align-self: flex-start;
+      color: $primary-color-80;
+      font-weight: 600;
+      font-size: calc(1rem - 2px);
+      width: 50%;
+      border: 1px solid $neonGreen-color;
+      padding: 12px 16px;
+      gap: 8px;
+      margin-top: 8px;
+      margin: auto;
+      cursor: pointer;
+      border-radius: 6px;
+      position: relative;
+      overflow: hidden;
+     transition: all 0.3s;
+       background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+         box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+       &:active {
+         scale: 0.95;
+       }
+       &:hover {
+         color: #82ffc9;
+           box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+     }
+       &::before{
+         content: "";
+         position: absolute;
+         left: -4em;
+         width: 4em;
+         height: 100%;
+         top: 0;
+         transition: transform .4s ease-in-out;
+           background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+     }
+       &:hover:before {
+         transform: translateX(20em);
+       }
+  
+    }
+    .divider{
+      height: 1px;
+      width: 100%;
+      background: $gradient-blueGreen10-blueGreen-blueGreen10;
+  }
+  }

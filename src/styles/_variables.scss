@@ -1,0 +1,23 @@
+// Colors
+$background-color: #000000;
+$blue-green-color: #184E68;
+$blue-green-color-10:rgb(24, 78, 104, 0.1);
+$neonGreen-color: rgb(27, 253, 156);
+$primary-color-100: #ffffff;
+$primary-color-80: rgb(255,255,255, 0.8);
+$gradient-white-blueGreen-neonGreen: linear-gradient(to right, $primary-color-100 0%, $blue-green-color 50%, $neonGreen-color 100%);
+$gradient-blueGreen-neonGreen: linear-gradient(to left, $blue-green-color 0%, $neonGreen-color 100%);
+$gradient-transparent-blueGreen-neonGreen: linear-gradient(
+  145deg,
+  transparent 35%,
+  #{$blue-green-color} 50%,
+  #{$neonGreen-color} 100%
+) border-box;
+$gradient-blueGreen10-blueGreen-blueGreen10:linear-gradient(to right, $blue-green-color-10 0%, $blue-green-color 50%, $blue-green-color-10 100%);
+// Spacing
+//$spacing-unit: 16px;
+
+// Fonts
+$font-family-base: 'Open Sans', sans-serif;
+$font-size-base: 20px;
+

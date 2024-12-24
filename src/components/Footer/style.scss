@@ -1,0 +1,110 @@
+@import '../../styles/_variables.scss';
+footer{
+    grid-column: 1/-1;
+     border-radius: 12px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     position: relative;  
+     gap: 1rem;
+    //  .divider{
+    //         height: 1px;
+    //         width: 100%;
+    //         background: $gradient-blueGreen10-blueGreen-blueGreen10;
+    //     }
+     .content{
+        width: 50%;
+        .descr-contact{
+            h2{
+                font-size: calc(2rem + 4px);
+                font-weight: 400;
+            }
+        }
+        .map-container iframe {
+            width: 100%;            
+            max-width: 600px;      
+            height: 350px;          
+            border: none;           
+            border-radius: 12px;    
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); 
+          }
+     } 
+     .form-container {
+       position: absolute;
+       right: 0;
+       top: 50%;
+       transform: translateY(-50%);
+       width: 400px;
+       background: linear-gradient($background-color, $background-color) padding-box,
+                    $gradient-transparent-blueGreen-neonGreen;
+       border: 2px solid transparent;
+       padding: 32px 24px;
+       display: flex;
+       flex-direction: column;
+       gap: 20px;
+       box-sizing: border-box;
+       border-radius: 16px;
+       .form {
+         display: flex;
+         flex-direction: column;
+         gap: 20px;
+         font-size: 1rem;
+
+       }
+         input,
+         textarea {
+           width: 100%;
+           padding: 12px 16px;
+           border-radius: 8px;
+           background-color: transparent;
+           border: 1px solid darken($primary-color-100, 60%);
+           color: $primary-color-100;
+           box-sizing: border-box;
+           font-size: calc(1rem - 2px);
+           &:focus {
+             outline: none;
+             border-color: $primary-color-100;
+           }
+         }
+         textarea {
+           resize: none;
+           height: 150px;
+         }
+     }
+     .contact-data-container{
+        width: 100%;
+        .content{
+            padding: 2rem 0;
+            width: 50%;
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            box-sizing: border-box;
+            h3{
+                margin-top: 0;
+                text-transform: uppercase;
+                font-weight: 600;
+                font-family: inherit;
+                font-size: calc(1rem - 2px);
+            }
+            p{
+            margin: 0;
+            font-size: calc(1rem - 2px);
+            color: $primary-color-80;
+
+        }
+        .social-media{
+            display: flex;
+            gap: 1rem;
+            justify-content: space-between;
+            svg :hover{
+                fill: #82ffc9;
+            }
+        }
+        
+        }
+     }  
+     
+}
+
+

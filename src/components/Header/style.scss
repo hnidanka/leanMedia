@@ -1,0 +1,107 @@
+@import '../../styles/_variables.scss';
+
+header{
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    grid-column: 1 / -1;
+    box-sizing:border-box;
+    position: relative;
+    nav{
+    height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .company-info{
+            display: flex;
+            width: 20%;
+            gap: 2rem;
+            .company-logo-container{
+                width: 200px;
+                display: flex;
+                align-items: end;
+                gap: 2rem;
+                justify-content: space-between;
+                .logo{
+                    .logo-icon{
+                        position: absolute;
+                        width: 4rem;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+                .name{
+                    
+                    font-weight: 800;
+                padding: 0.5rem 0 0.5rem 0;
+                }
+                
+            }
+        }
+        .toolbar{
+            width: 50%;
+            ul{
+                all: unset;
+                width: 100%;
+                list-style-type: none;
+                display: flex;
+                justify-content: end;
+                gap: calc(1rem - 8px);
+                text-transform: uppercase;
+                font-size: calc(1rem - 2px);
+                font-weight: 600;
+                .item{
+                    width: 6rem;
+                    padding: calc(1rem - 8px);
+                    text-align: center;
+                    position: relative;
+                    display: block;
+                    &::before{
+                        content: "";
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-top: 1px solid $neonGreen-color;
+                        border-left:1px solid $neonGreen-color;;
+                        transition: 0.5s;
+                        box-sizing: border-box;
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        width: 100%;
+                        height: 100%;
+                        border-bottom: 1px solid $neonGreen-color;
+                        border-right:1px solid $neonGreen-color;;
+                        transition: 0.5s;
+                        box-sizing: border-box;
+                    }
+                    &:hover::before{
+                            width: 15px;
+                            height: 15px;
+                    }
+                    &.selected::before {
+                        width: 15px;
+                        height: 15px;
+                      }
+                    &:hover::after{
+                        width: 15px;
+                        height: 15px;
+                    }
+                    &.selected::after {
+                        width: 15px;
+                        height: 15px;
+                      }
+                    a{  
+                        color: $primary-color-100;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+}
