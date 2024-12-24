@@ -1,6 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import './style.scss'
-import leanMediaIcon from '../../assets/leanMediaIcon.png'
+import leanMediaIcon from '../../assets/favicon/leanMediaIcon.png'
 
 function Header () {
   const location = useLocation();
