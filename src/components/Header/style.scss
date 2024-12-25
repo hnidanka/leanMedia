@@ -80,6 +80,9 @@ header{
                         transition: 0.5s;
                         box-sizing: border-box;
                     }
+                    &:hover{
+                        cursor: pointer;
+                    }
                     &:hover::before{
                             width: 15px;
                             height: 15px;

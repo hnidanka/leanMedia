@@ -114,3 +114,23 @@
         }
     }
 }
+#how-we-work{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    h1{
+        all: unset;
+        font-size: calc(1rem + 6px);
+        text-transform: uppercase;
+        padding-bottom:1rem;
+    }
+    .content-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+}

@@ -1,41 +1,49 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
 import './style.scss'
-import leanMediaIcon from '../../assets/favicon/leanMediaIcon.png'
-
-function Header () {
+import leanMediaIcon from '../../assets/favicon/leanMediaIcon.png';
+import leanServiceIcon from '../../assets/favicon/leanService-icon.jpg';
+import { useEffect, useState } from 'react';
+function Header ({scrollToFooter}) {
+  const [iconSrc, setIconSrc]= useState(leanMediaIcon);
+  const [name, setName] =useState('')
+  const [path, setPath] = useState('/');
   const location = useLocation();
-  const items = document.querySelectorAll('ul .item');
-  const hadndleClick=(e)=>{
-    
-    items.forEach(item=>{
-      item.classList.remove('selected')
-    })
-    e.currentTarget.classList.add('selected');
-    
+  const navigateTo = useNavigate();
+  const changeIconAndName = ()=>{
+    if (location.pathname === '/service') {
+      setIconSrc(leanServiceIcon);
+      setName('Lean Service')
+    }else{
+      setIconSrc(leanMediaIcon);
+      setName('')
+    }
   }
-  const isActive = (path)=> {
-    items.forEach(item=>{
-      item.classList.remove('selected')
-    })
-    return location.pathname === path;
-  }
+
+  useEffect(()=>{
+    changeIconAndName();
+    setPath(location.pathname)
+    console.log(path)
+
+  },[location.pathname])
+  console.log(path)
+
   return (
     <header>
       <nav>
         <div className='company-info'>
           <div className='company-logo-container'>
-            <div className='logo'>
-              <img className="logo-icon" src={leanMediaIcon} alt="Lean Media Logo" />
+            <div className='logo' onClick={()=>navigateTo('/')}>
+              <img className="logo-icon" src={iconSrc} alt="Lean Media Logo" />
             </div>
-            <div className='name'>Lean Media</div>
+            <div className='name'>{name}</div>
           </div>
         </div>
         <div className='toolbar'>
           <ul>
-            <li className={`item ${isActive('/')?'selected' :''}`} onClick={hadndleClick}><Link to="/">Główna</Link></li>
-            <li className={`item ${isActive('/service')?'selected' :''}`} onClick={hadndleClick}><Link to="/service">Service</Link></li>
-            <li className={`item ${isActive('/shop')?'selected' :''}`} onClick={hadndleClick}><Link to="/shop">Sklep</Link></li>
-            <li className={`item ${isActive('/shop')?'selected' :''}`} onClick={hadndleClick}><Link to="/shop">Kontakt</Link></li>
+            <li className={`item ${path==='/' ? 'selected': ''}`} ><Link to="/">Główna</Link></li>
+            <li className={`item ${path==='/service' ? 'selected': ''}`} ><Link to="/service">Service</Link></li>
+            <li className={`item ${path==='/shop' ? 'selected': ''}`} ><Link to="/shop">Sklep</Link></li>
+            <li className={`item `} onClick={scrollToFooter}>Kontakt</li>
           </ul>
         </div>
       </nav>

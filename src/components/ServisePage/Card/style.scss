@@ -1,0 +1,63 @@
+@import '../../../styles/_variables.scss';
+.card {
+    width: 250px;
+    height: 300px;
+    background: $background-color;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    place-items: center;
+    overflow: hidden;
+    border-radius: 20px;
+    padding: 0.5rem;
+    text-align: center;
+    color: $primary-color-100;
+    &:hover{
+        cursor: pointer;
+    }
+   p {
+    z-index: 1;
+    font-size: 1rem;
+  }
+  .order-num{
+    z-index: 1;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, $neonGreen-color, $blue-green-color);
+    height: 130%;
+    animation: rotBGimg 5s linear infinite;
+    transition: all 0.5s linear;
+  }
+ 
+  &::after {
+         content: '';
+         position: absolute;
+         background: $background-color;
+         
+         inset: 5px;
+         border-radius: 15px;
+       } 
+}
+
+  
+  @keyframes rotBGimg {
+    from {
+      transform: rotate(0deg);
+    }
+  
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  
+  

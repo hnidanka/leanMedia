@@ -11,6 +11,7 @@ import controllerIcon from '../../assets/favicon/controller.png';
 import computerIcon from '../../assets/favicon/computer.png';
 import './style.scss'
 import { useEffect, useState } from 'react';
+import Card from './Card/indej';
 
 
 function ServisePage () {
@@ -130,7 +131,13 @@ useEffect(()=>{
           </div>
         </section>
         <section id="how-we-work">
-
+        <div className='divider'></div>
+        <h1>Jak pracujemy?</h1>
+        <div className='content-container'>
+          <Card id="01" text="Przynosisz urządzenie do naszego serwisu."/>
+          <Card id="02" text="Przeprowadzamy diagnostykę i uzgadniamy z Tobą plan naprawy."/>
+          <Card id="03" text="Naprawiamy usterkę w możliwie najkrótszym czasie i zwracamy urządzenie w idealnym stanie."/>
+          </div>
         </section>
       </main>
     );

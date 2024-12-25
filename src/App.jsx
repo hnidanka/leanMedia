@@ -5,8 +5,8 @@ import Home from './components/HomePage'
 import Servise from './components/ServisePage';
 import Shop from './components/ShopPage';
 import Layout from './components/Layout';
-import './styles/main.scss'
-
+import './styles/main.scss';
+import './styles/media.scss';
 function App() {
 
   return (

@@ -1,6 +1,5 @@
 @import '_variables';
 
-
 .main-grid-container {
     min-height: 100vh;
     width: 100%;
@@ -14,6 +13,7 @@
     box-sizing: border-box;
     font-family: $font-family-base;
     color: $primary-color-100; 
+    
     .call-to-action {
       display: flex;
       align-items: flex-start;
@@ -63,3 +63,4 @@
       background: $gradient-blueGreen10-blueGreen-blueGreen10;
   }
   }
+
